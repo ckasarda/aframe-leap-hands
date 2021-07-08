@@ -5,6 +5,7 @@ import { transform } from '../lib/leap.transform.js';
 var DEFAULT_SCALE = 0.001;
 var DEFAULT_POSITION = new THREE.Vector3();
 var DEFAULT_QUATERNION = new THREE.Quaternion();
+var DEFAULT_HOST = '127.0.0.1';
 
 Leap.Controller.plugin('transform', transform);
 
@@ -13,6 +14,7 @@ Leap.Controller.plugin('transform', transform);
  */
 export const System = AFRAME.registerSystem('leap', {
   schema: {
+    host: {default: DEFAULT_HOST},
     vr: {default: true},
     scale: {default: DEFAULT_SCALE},
     position: {
@@ -35,7 +37,8 @@ export const System = AFRAME.registerSystem('leap', {
   },
 
   init: function () {
-    this.controller = Leap.loop()
+    var {host} = this.data;
+    this.controller = Leap.loop({host})
       .use('transform', this.data);
   },
 
