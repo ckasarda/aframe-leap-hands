@@ -73,6 +73,15 @@ For example, to set both hands to **desktop** configuration:
 </a-scene>
 ```
 
+For example, to host leap hands from another computer:
+
+```html
+<a-scene leap="host: 123.456.7.8">
+  <a-entity leap-hand="hand: left"></a-entity>
+  <a-entity leap-hand="hand: right"></a-entity>
+</a-scene>
+```
+
 ## References:
 
 ### Official
