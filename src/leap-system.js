@@ -6,7 +6,7 @@ var DEFAULT_SCALE = 0.001;
 var DEFAULT_POSITION = new THREE.Vector3();
 var DEFAULT_QUATERNION = new THREE.Quaternion();
 var DEFAULT_HOST = '127.0.0.1';
-var DEFAULT_PORT = '6437';
+var DEFAULT_PORT = '6436';
 
 Leap.Controller.plugin('transform', transform);
 
