@@ -93,9 +93,6 @@ HandBody.prototype.syncPalmBody = (function () {
     body.quaternion.copy(hmdRotation.multiply(rotation));
     this.el.object3D.localToWorld(position.fromArray(hand.palmPosition));
     body.position.copy(position);
-    // Print out hand position and rotation data
-    console.log("Rotation: ", hand.pitch(), hand.yaw(), hand.roll());
-    console.log("Position: ", hand.palmPosition);
   };
 }());
 
