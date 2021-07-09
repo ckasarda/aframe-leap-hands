@@ -88,6 +88,8 @@ const Component = AFRAME.registerComponent('leap-hand', {
       this.intersector.update(this.data, this.el.object3D, hand, isHolding);
       if ( isHolding && !this.isHolding) this.hold(hand);
       if (!isHolding &&  this.isHolding) this.release(hand);
+      // Print out information
+      console.log("Palm Position: " + hand.palmPosition() + "; Palm Velocity: " + hand.palmVelocity());
     } else if (this.isHolding) {
       this.release(null);
     }
