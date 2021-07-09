@@ -91,9 +91,11 @@ HandBody.prototype.syncPalmBody = (function () {
     rotation.setFromEuler(euler.set(hand.pitch(), hand.yaw(), hand.roll()));
     this.el.object3D.matrixWorld.decompose(_tmp1, hmdRotation, _tmp2);
     body.quaternion.copy(hmdRotation.multiply(rotation));
-
     this.el.object3D.localToWorld(position.fromArray(hand.palmPosition));
     body.position.copy(position);
+    // Print out hand position and rotation data
+    console.log("Rotation: ", hand.pitch(), hand.yaw(), hand.roll());
+    console.log("Position: ", hand.palmPosition);
   };
 }());
 
